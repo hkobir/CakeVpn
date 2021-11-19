@@ -29,9 +29,10 @@ public class SharedPreference {
 
     /**
      * Save server details
+     *
      * @param server details of ovpn server
      */
-    public void saveServer(Server server){
+    public void saveServer(Server server) {
         mPrefEditor.putString(SERVER_COUNTRY, server.getCountry());
         mPrefEditor.putString(SERVER_FLAG, server.getFlagUrl());
         mPrefEditor.putString(SERVER_OVPN, server.getOvpn());
@@ -42,16 +43,17 @@ public class SharedPreference {
 
     /**
      * Get server data from shared preference
+     *
      * @return server model object
      */
     public Server getServer() {
 
         Server server = new Server(
-                mPreference.getString(SERVER_COUNTRY,"Japan"),
-                mPreference.getString(SERVER_FLAG,getImgURL(R.drawable.japan)),
-                mPreference.getString(SERVER_OVPN,"japan.ovpn"),
-                mPreference.getString(SERVER_OVPN_USER,"vpn"),
-                mPreference.getString(SERVER_OVPN_PASSWORD,"vpn")
+                mPreference.getString(SERVER_COUNTRY, "Pathshala"),
+                mPreference.getString(SERVER_FLAG, getImgURL(R.drawable.bd_flag)),
+                mPreference.getString(SERVER_OVPN, "pathshalatest.ovpn"),
+                mPreference.getString(SERVER_OVPN_USER, "vpn"),
+                mPreference.getString(SERVER_OVPN_PASSWORD, "vpn")
         );
 
         return server;

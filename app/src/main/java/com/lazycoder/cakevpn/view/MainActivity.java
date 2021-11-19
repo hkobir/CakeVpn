@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity implements NavItemClickListe
     private ChangeServer changeServer;
 
     public static final String TAG = "CakeVPN";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -93,7 +94,7 @@ public class MainActivity extends AppCompatActivity implements NavItemClickListe
     /**
      * Close navigation drawer
      */
-    public void closeDrawer(){
+    public void closeDrawer() {
         if (drawer.isDrawerOpen(GravityCompat.END)) {
             drawer.closeDrawer(GravityCompat.END);
         } else {
@@ -108,6 +109,12 @@ public class MainActivity extends AppCompatActivity implements NavItemClickListe
 
         ArrayList<Server> servers = new ArrayList<>();
 
+        servers.add(new Server("Pathshala",
+                Utils.getImgURL(R.drawable.bd_flag),
+                "pathshalatest.ovpn",
+                "vpn",
+                "vpn"
+        ));
         servers.add(new Server("United States",
                 Utils.getImgURL(R.drawable.usa_flag),
                 "us.ovpn",
@@ -138,6 +145,7 @@ public class MainActivity extends AppCompatActivity implements NavItemClickListe
 
     /**
      * On navigation item click, close drawer and change server
+     *
      * @param index: server index
      */
     @Override
