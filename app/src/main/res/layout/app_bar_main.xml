@@ -7,6 +7,7 @@
     <include layout="@layout/tool_bar"></include>
 
     <FrameLayout
+        android:background="@color/glow_opacity"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/container">
